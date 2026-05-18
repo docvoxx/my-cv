@@ -2,576 +2,484 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CV - Lan Nguyen Duc</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lan Nguyen Duc | AI & Data CV</title>
   <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: rgba(255, 255, 255, 0.92);
+      --ink: #132238;
+      --muted: #5f6b7a;
+      --line: #dce3ee;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 24%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 20px;
-      background: #f4f6f8;
-      color: #333;
+      padding: 28px 18px 48px;
     }
 
-    .cv-container {
-      background: #fff;
-      padding: 32px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      position: relative;
+    .shell {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 22px;
+      align-items: start;
     }
 
-    .header {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      border-bottom: 2px solid #222;
-      padding-bottom: 20px;
-      margin-bottom: 28px;
+    .sidebar,
+    .main {
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(220, 227, 238, 0.85);
+      box-shadow: var(--shadow);
+      border-radius: 24px;
     }
 
-    .profile-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+    .sidebar {
+      position: sticky;
+      top: 18px;
+      padding: 24px;
+    }
+
+    .main { padding: 28px; }
+
+    .avatar {
+      width: 116px;
+      height: 116px;
+      border-radius: 28px;
       background: url("images/hinh-the.jpg") center/cover no-repeat;
-      border: 3px solid #222;
+      margin-bottom: 18px;
+      border: 4px solid white;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
     }
 
-    .name {
-      font-size: 28px;
-      font-weight: bold;
+    h1 {
+      font-size: 2rem;
+      line-height: 1.1;
+      margin: 0 0 8px;
+      letter-spacing: -0.03em;
     }
 
-    .target-role {
-      font-size: 16px;
-      font-weight: bold;
-      color: #444;
-      margin: 6px 0 10px;
+    .role {
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
-    .contact-info div {
-      font-size: 14px;
-      margin: 4px 0;
+    .lead {
+      color: var(--muted);
+      margin: 0 0 22px;
     }
 
-    .section {
-      margin-bottom: 26px;
+    .contact,
+    .pill-list,
+    .plain-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .section-title {
-      font-size: 18px;
-      font-weight: bold;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 6px;
-      margin-bottom: 14px;
+    .contact li {
+      margin-bottom: 10px;
+      color: var(--muted);
+      word-break: break-word;
     }
 
-    .content {
-      font-size: 14px;
-      line-height: 1.6;
-      text-align: justify;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 8px;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      vertical-align: top;
-      font-size: 14px;
-    }
-
-    th {
-      background: #f2f2f2;
-      width: 28%;
-    }
-
-    .project {
-      background: #f9f9f9;
-      padding: 14px;
-      border-left: 4px solid #333;
-      margin-bottom: 14px;
-    }
-
-    .project-title {
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-
-    .experience {
-      padding: 14px;
-      border: 1px solid #eee;
-      border-radius: 6px;
-      margin-bottom: 16px;
-    }
-
-    .edu-box {
-      background: #f9f9f9;
-      padding: 14px;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-    }
+    a:hover { color: var(--accent); }
 
     .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      display: inline-flex;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 5px;
+      background: #eef4ff;
+      border-radius: 999px;
     }
 
     .lang-switch button {
-      padding: 6px 12px;
-      border: 1px solid #333;
-      background: #fff;
+      border: 0;
+      background: transparent;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--muted);
       cursor: pointer;
-      font-size: 13px;
-      margin-left: 6px;
-      border-radius: 4px;
+      font-weight: 700;
     }
 
     .lang-switch button.active {
-      background: #333;
-      color: #fff;
+      background: var(--accent);
+      color: white;
+    }
+
+    .section + .section { margin-top: 28px; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .section-title::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 16px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: 1.55rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill-list li {
+      padding: 8px 12px;
+      background: var(--accent-soft);
+      color: #1d4ed8;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: rgba(255,255,255,0.78);
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .meta {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+
+    .plain-list li + li { margin-top: 8px; }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline .card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, #2563eb, #38bdf8);
+    }
+
+    .certs {
+      columns: 2;
+      column-gap: 18px;
+    }
+
+    .certs li {
+      break-inside: avoid;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .grid { grid-template-columns: 1fr; }
+      .certs { columns: 1; }
     }
   </style>
 </head>
-
 <body>
-<div class="cv-container">
-
-  <!-- LANGUAGE SWITCH -->
-  <div class="lang-switch">
-    <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
-    <button id="btn-vi" onclick="switchLang('vi')">VI</button>
-  </div>
-
-  <!-- HEADER -->
-  <div class="header">
-    <div class="profile-photo"></div>
-    <div>
-      <div class="name">LAN NGUYEN DUC</div>
-      <div class="target-role"
-        data-en="Target Position: Data Analyst / AI Engineer"
-        data-vi="Vị trí ứng tuyển: Data Analyst / Kỹ sư AI">
-        Target Position: Data Analyst / AI Engineer
-      </div>
-      <div class="contact-info">
-        <div>
-          📧 Email:
-          <a href="mailto:lannguyen68609@gmail.com">
-            lannguyen68609@gmail.com
-          </a>
+  <div class="page">
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="avatar"></div>
+        <h1>Lan Nguyen Duc</h1>
+        <div class="role"
+          data-en="Data Analyst / AI Engineer"
+          data-vi="Data Analyst / Kỹ sư AI">
+          Data Analyst / AI Engineer
         </div>
+        <p class="lead"
+          data-en="Third-year Artificial Intelligence student focused on data, machine learning, and practical AI applications."
+          data-vi="Sinh viên năm ba ngành Trí tuệ Nhân tạo, tập trung vào dữ liệu, học máy và các ứng dụng AI thực tiễn.">
+          Third-year Artificial Intelligence student focused on data, machine learning, and practical AI applications.
+        </p>
 
-        <div>
-          📞 Phone:
-          <a href="tel:+84903842341">
-            +84 090 384 2341
-          </a>
+        <ul class="contact">
+          <li>📧 <a href="mailto:lannguyen68609@gmail.com">lannguyen68609@gmail.com</a></li>
+          <li>📞 <a href="tel:+84903842341">+84 903 842 341</a></li>
+          <li>🔗 <a href="https://www.linkedin.com/in/lannd205" target="_blank">linkedin.com/in/lannd205</a></li>
+          <li>💻 <a href="https://github.com/docvoxx" target="_blank">github.com/docvoxx</a></li>
+        </ul>
+
+        <div class="lang-switch">
+          <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
+          <button id="btn-vi" onclick="switchLang('vi')">VI</button>
         </div>
+      </aside>
 
-        <div>
-          🔗 LinkedIn:
-          <a href="https://www.linkedin.com/in/lannd205" target="_blank">
-            linkedin.com/in/lannd205
-          </a>
-        </div>
+      <main class="main">
+        <section class="hero">
+          <h2
+            data-en="I turn data into insight, and machine learning ideas into practical solutions."
+            data-vi="Tôi biến dữ liệu thành insight, và biến ý tưởng học máy thành các giải pháp thực tiễn.">
+            I turn data into insight, and machine learning ideas into practical solutions.
+          </h2>
+          <p
+            data-en="My strongest work sits where analysis meets application: exploring data, training models, and thinking about how AI solutions can be delivered in useful, reliable ways."
+            data-vi="Điểm mạnh của tôi nằm ở nơi phân tích gặp ứng dụng: khám phá dữ liệu, huấn luyện mô hình và suy nghĩ về cách đưa giải pháp AI vào thực tế một cách hữu ích, đáng tin cậy.">
+            My strongest work sits where analysis meets application: exploring data, training models, and thinking about how AI solutions can be delivered in useful, reliable ways.
+          </p>
+          <ul class="pill-list">
+            <li>Python</li>
+            <li>Machine Learning</li>
+            <li>NLP</li>
+            <li>Computer Vision</li>
+            <li>Model Evaluation</li>
+            <li>Data Visualization</li>
+          </ul>
+        </section>
 
-        <div>
-          💻 GitHub:
-          <a href="https://github.com/docvoxx" target="_blank">
-            github.com/docvoxx
-          </a>
-        </div>
-      </div>
+        <section class="section">
+          <h3 class="section-title"
+            data-en="Core strengths"
+            data-vi="Năng lực cốt lõi">
+            Core strengths
+          </h3>
+          <div class="grid">
+            <div class="card">
+              <h3 data-en="AI & Data" data-vi="AI & Dữ liệu">AI & Data</h3>
+              <p data-en="Python, NumPy, Pandas, Matplotlib, scikit-learn, TensorFlow, PyTorch"
+                 data-vi="Python, NumPy, Pandas, Matplotlib, scikit-learn, TensorFlow, PyTorch">
+                 Python, NumPy, Pandas, Matplotlib, scikit-learn, TensorFlow, PyTorch
+              </p>
+            </div>
+            <div class="card">
+              <h3 data-en="Software Engineering Foundations" data-vi="Nền tảng kỹ thuật phần mềm">Software Engineering Foundations</h3>
+              <p data-en="REST API concepts, deployment workflows, Docker fundamentals, Git-based collaboration"
+                 data-vi="Khái niệm REST API, quy trình triển khai, nền tảng Docker, cộng tác với Git">
+                 REST API concepts, deployment workflows, Docker fundamentals, Git-based collaboration
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title"
+            data-en="Featured projects"
+            data-vi="Dự án nổi bật">
+            Featured projects
+          </h3>
+          <div class="grid">
+            <article class="card">
+              <h3 data-en="Financial Forecasting Model" data-vi="Mô hình dự báo tài chính">Financial Forecasting Model</h3>
+              <p data-en="Built machine learning models on historical financial data to study trend prediction and model evaluation."
+                 data-vi="Xây dựng các mô hình học máy trên dữ liệu tài chính lịch sử để nghiên cứu dự báo xu hướng và đánh giá mô hình.">
+                 Built machine learning models on historical financial data to study trend prediction and model evaluation.
+              </p>
+            </article>
+            <article class="card">
+              <h3 data-en="Chatbot Recommendation System" data-vi="Hệ thống gợi ý chatbot">Chatbot Recommendation System</h3>
+              <p data-en="Developed an NLP-based chatbot prototype and explored API-based delivery for practical use."
+                 data-vi="Phát triển nguyên mẫu chatbot dựa trên NLP và tìm hiểu cách đưa vào sử dụng thông qua API.">
+                 Developed an NLP-based chatbot prototype and explored API-based delivery for practical use.
+              </p>
+            </article>
+            <article class="card">
+              <h3 data-en="Deepfake Detection" data-vi="Phát hiện deepfake">Deepfake Detection</h3>
+              <p data-en="Designed deep learning pipelines using CNN-based approaches for synthetic media detection."
+                 data-vi="Thiết kế pipeline học sâu sử dụng CNN cho bài toán phát hiện nội dung tổng hợp.">
+                 Designed deep learning pipelines using CNN-based approaches for synthetic media detection.
+              </p>
+            </article>
+            <article class="card">
+              <h3 data-en="Audio Emotion Recognition" data-vi="Nhận diện cảm xúc giọng nói">Audio Emotion Recognition</h3>
+              <p data-en="Built RNN-oriented workflows for emotion recognition from speech signals."
+                 data-vi="Xây dựng quy trình dùng RNN cho bài toán nhận diện cảm xúc từ tín hiệu giọng nói.">
+                 Built RNN-oriented workflows for emotion recognition from speech signals.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title"
+            data-en="Experience"
+            data-vi="Kinh nghiệm">
+            Experience
+          </h3>
+          <div class="timeline">
+            <article class="card">
+              <h3 data-en="OJT Trainee — FCJ AWS Cloud Program" data-vi="Thực tập sinh OJT — Chương trình AWS Cloud FCJ">OJT Trainee — FCJ AWS Cloud Program</h3>
+              <div class="meta">Sep 2025 – Dec 2025</div>
+              <ul class="plain-list">
+                <li data-en="Trained in AWS cloud fundamentals and deployment workflows."
+                    data-vi="Được đào tạo về nền tảng AWS Cloud và quy trình triển khai.">
+                    Trained in AWS cloud fundamentals and deployment workflows.
+                </li>
+                <li data-en="Practiced cloud-native and DevOps-oriented delivery."
+                    data-vi="Thực hành các mô hình cloud-native và định hướng DevOps.">
+                    Practiced cloud-native and DevOps-oriented delivery.
+                </li>
+                <li data-en="Completed the program with strong performance recognition."
+                    data-vi="Hoàn thành chương trình với đánh giá tích cực về hiệu suất.">
+                    Completed the program with strong performance recognition.
+                </li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 data-en="Community Developer — PiED Team" data-vi="Thành viên phát triển cộng đồng — PiED Team">Community Developer — PiED Team</h3>
+              <div class="meta">2023 – 2024</div>
+              <ul class="plain-list">
+                <li data-en="Collaborated on team coding projects."
+                    data-vi="Tham gia các dự án lập trình theo nhóm.">
+                    Collaborated on team coding projects.
+                </li>
+                <li data-en="Practiced collaborative development workflows."
+                    data-vi="Thực hành quy trình phát triển theo nhóm.">
+                    Practiced collaborative development workflows.
+                </li>
+                <li data-en="Built core software engineering fundamentals alongside AI studies."
+                    data-vi="Xây dựng nền tảng cốt lõi về kỹ thuật phần mềm song song với việc học AI.">
+                    Built core software engineering fundamentals alongside AI studies.
+                </li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 data-en="English Tutor" data-vi="Gia sư tiếng Anh">English Tutor</h3>
+              <div class="meta">2023</div>
+              <ul class="plain-list">
+                <li data-en="Taught foundational English and IELTS preparation."
+                    data-vi="Giảng dạy tiếng Anh nền tảng và luyện thi IELTS.">
+                    Taught foundational English and IELTS preparation.
+                </li>
+                <li data-en="Strengthened communication, explanation, and presentation skills."
+                    data-vi="Rèn luyện kỹ năng giao tiếp, diễn giải và thuyết trình.">
+                    Strengthened communication, explanation, and presentation skills.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title"
+            data-en="Education"
+            data-vi="Học vấn">
+            Education
+          </h3>
+          <div class="card">
+            <h3 data-en="Bachelor of Artificial Intelligence" data-vi="Cử nhân Trí tuệ Nhân tạo">Bachelor of Artificial Intelligence</h3>
+            <p>FPT University</p>
+            <p data-en="Expected graduation: 2027" data-vi="Dự kiến tốt nghiệp: 2027">Expected graduation: 2027</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title"
+            data-en="Selected certifications"
+            data-vi="Chứng chỉ chọn lọc">
+            Selected certifications
+          </h3>
+          <ul class="certs">
+            <li>IELTS 7.5</li>
+            <li>Natural Language Processing Specialization — DeepLearning.AI</li>
+            <li>Sequence Models — DeepLearning.AI</li>
+            <li>Neural Networks and Deep Learning — DeepLearning.AI</li>
+            <li>Convolutional Neural Networks — DeepLearning.AI</li>
+            <li>Software Development Lifecycle — University of Minnesota</li>
+            <li>Python for Data Science, AI & Development — IBM</li>
+            <li>Cloud and software development coursework — IBM</li>
+          </ul>
+        </section>
+      </main>
     </div>
   </div>
 
-  <!-- OBJECTIVE -->
-  <div class="section">
-    <div class="section-title"
-      data-en="Career Objective"
-      data-vi="Mục tiêu nghề nghiệp">
-      Career Objective
-    </div>
-    <div class="content"
-      data-en="Third-year Artificial Intelligence student at FPT University with strong interest in Data Analysis, Machine Learning, and AI Engineering. Solid foundation in Python, statistics, and applied machine learning. Passionate about transforming data into meaningful insights and building practical AI solutions. Seeking internship or junior-level opportunities to grow in a professional data-driven environment."
-      data-vi="Sinh viên năm ba ngành Trí tuệ Nhân tạo tại Đại học FPT, định hướng phát triển trong lĩnh vực Phân tích Dữ liệu, Machine Learning và Kỹ sư AI. Có nền tảng vững về Python, thống kê và học máy ứng dụng. Đam mê chuyển đổi dữ liệu thành insight có giá trị và xây dựng các giải pháp AI thực tiễn. Mong muốn tìm kiếm cơ hội thực tập hoặc vị trí junior trong môi trường chuyên nghiệp.">
-      Career objective
-    </div>
-  </div>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll("[data-en]").forEach((el) => {
+        el.innerText = el.dataset[lang];
+      });
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+      document.getElementById("btn-vi").classList.toggle("active", lang === "vi");
+      localStorage.setItem("cv-lang", lang);
+    }
 
-  <!-- CORE SKILLS -->
-  <div class="section">
-    <div class="section-title"
-      data-en="Core Skills (AI & Data)"
-      data-vi="Kỹ năng cốt lõi (AI & Dữ liệu)">
-      Core Skills
-    </div>
-    <table>
-      <tr>
-        <th data-en="Programming" data-vi="Lập trình">Programming</th>
-        <td>Python (NumPy, Pandas, Matplotlib, scikit-learn)</td>
-      </tr>
-      <tr>
-        <th data-en="Data Analysis" data-vi="Phân tích dữ liệu">Data Analysis</th>
-        <td
-          data-en="Data cleaning, EDA, feature engineering, data visualization"
-          data-vi="Làm sạch dữ liệu, EDA, tạo đặc trưng, trực quan hóa dữ liệu">
-          Data cleaning, EDA, feature engineering, data visualization
-        </td>
-      </tr>
-      <tr>
-        <th data-en="Machine Learning" data-vi="Học máy">Machine Learning</th>
-        <td
-          data-en="Regression, Classification, Clustering, Model evaluation"
-          data-vi="Hồi quy, Phân loại, Phân cụm, Đánh giá mô hình">
-          Regression, Classification, Clustering, Model evaluation
-        </td>
-      </tr>
-      <tr>
-        <th data-en="Deep Learning" data-vi="Học sâu">Deep Learning</th>
-        <td>CNN, RNN, Transformer (TensorFlow, PyTorch)</td>
-      </tr>
-      <tr>
-        <th data-en="AI Domains" data-vi="Lĩnh vực AI">AI Domains</th>
-        <td>Computer Vision, Natural Language Processing</td>
-      </tr>
-    </table>
-  </div>
-    <!-- SELF-STUDY TECHNICAL SKILLS -->
-  <div class="section">
-    <div class="section-title"
-      data-en="Additional Technical Skills (Self-study)"
-      data-vi="Kỹ năng kỹ thuật bổ sung (Tự học)">
-      Additional Technical Skills
-    </div>
-    <div class="content">
-      <span data-en="Learned through self-study and hands-on community projects at "
-            data-vi="Được học thông qua quá trình tự học và các dự án thực hành tại ">
-        Learned through self-study and hands-on community projects at 
-      </span>
-      <a href="https://www.facebook.com/PiedTeam" target="_blank">
-        PiED Team Coding Community
-      </a>.
-    </div>
-    <table>
-      <tr>
-        <th
-          data-en="Web & API Development"
-          data-vi="Phát triển Web & API">
-          Web & API Development
-        </th>
-        <td
-          data-en="FastAPI (AI/ML APIs), RESTful API design, React.js, Node.js, Express.js"
-          data-vi="FastAPI (API cho AI/ML), thiết kế RESTful API, React.js, Node.js, Express.js">
-          FastAPI (AI/ML APIs), RESTful API design, React.js, Node.js, Express.js
-        </td>
-      </tr>
-
-      <tr>
-        <th
-          data-en="Databases"
-          data-vi="Cơ sở dữ liệu">
-          Databases
-        </th>
-        <td
-          data-en="MongoDB, MySQL, SQL Server"
-          data-vi="MongoDB, MySQL, SQL Server">
-          MongoDB, MySQL, SQL Server
-        </td>
-      </tr>
-
-      <tr>
-        <th
-          data-en="DevOps & Deployment"
-          data-vi="DevOps & Triển khai">
-          DevOps & Deployment
-        </th>
-        <td
-          data-en="Docker (containerization, Dockerfile, basic Docker Compose), API deployment workflows"
-          data-vi="Docker (đóng gói container, Dockerfile, Docker Compose cơ bản), quy trình triển khai API">
-          Docker (containerization, Dockerfile, basic Docker Compose), API deployment workflows
-        </td>
-      </tr>
-
-      <tr>
-        <th
-          data-en="Tools"
-          data-vi="Công cụ">
-          Tools
-        </th>
-        <td
-          data-en="Git, GitHub, Postman, JWT Authentication"
-          data-vi="Git, GitHub, Postman, xác thực JWT">
-          Git, GitHub, Postman, JWT Authentication
-        </td>
-      </tr>
-    </table>
-  </div>
-  <!-- PROJECTS -->
-  <div class="section">
-    <div class="section-title"
-      data-en="AI & Data Projects"
-      data-vi="Dự án AI & Dữ liệu">
-      Projects
-    </div>
-
-    <div class="project">
-      <div class="project-title"
-        data-en="Financial Forecasting Model"
-        data-vi="Mô hình dự báo tài chính">
-        Financial Forecasting Model
-      </div>
-      <div class="content"
-        data-en="Built machine learning models to predict financial trends using historical data."
-        data-vi="Xây dựng mô hình học máy để dự đoán xu hướng tài chính từ dữ liệu lịch sử.">
-        Content
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-title"
-        data-en="Chatbot Recommendation System"
-        data-vi="Hệ thống gợi ý Chatbot">
-        Chatbot Recommendation System
-      </div>
-      <div class="content"
-        data-en="Developed an NLP-based chatbot using FastAPI."
-        data-vi="Phát triển chatbot NLP và triển khai API bằng FastAPI.">
-        Content
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-title"
-        data-en="Deepfake Detection & Audio Emotion Recognition"
-        data-vi="Phát hiện Deepfake & Nhận diện cảm xúc âm thanh">
-        Deepfake Detection
-      </div>
-      <div class="content"
-        data-en="Designed deep learning pipelines using CNNs and RNNs."
-        data-vi="Thiết kế pipeline học sâu sử dụng CNN và RNN.">
-        Content
-      </div>
-    </div>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div class="section">
-    <div class="section-title"
-        data-en="Experience & Activities"
-        data-vi="Kinh nghiệm & Hoạt động">
-      Experience & Activities
-    </div>
-
-    <!-- PiED Team -->
-    <div class="experience">
-      <b
-        data-en="Community Developer – PiED Team (2023–2024)"
-        data-vi="Thành viên phát triển cộng đồng – PiED Team (2023–2024)">
-        Community Developer – PiED Team (2023–2024)
-      </b>
-      <ul>
-        <li
-          data-en="Participated in collaborative coding projects"
-          data-vi="Tham gia các dự án lập trình theo nhóm">
-          Participated in collaborative coding projects
-        </li>
-        <li
-          data-en="Practiced full development workflow and teamwork"
-          data-vi="Thực hành quy trình phát triển phần mềm và làm việc nhóm">
-          Practiced full development workflow and teamwork
-        </li>
-        <li
-          data-en="Self-studied software engineering fundamentals alongside AI learning"
-          data-vi="Tự học các nền tảng kỹ thuật phần mềm song song với học AI">
-          Self-studied software engineering fundamentals alongside AI learning
-        </li>
-      </ul>
-    </div>
-
-    <!-- English Tutor -->
-    <div class="experience">
-      <b
-        data-en="English Tutor – Private (2023)"
-        data-vi="Gia sư tiếng Anh – Cá nhân (2023)">
-        English Tutor – Private (2023)
-      </b>
-      <ul>
-        <li
-          data-en="Taught basic English and IELTS preparation"
-          data-vi="Giảng dạy tiếng Anh cơ bản và luyện thi IELTS">
-          Taught basic English and IELTS preparation
-        </li>
-        <li
-          data-en="Strengthened communication and presentation skills"
-          data-vi="Phát triển kỹ năng giao tiếp và thuyết trình">
-          Strengthened communication and presentation skills
-        </li>
-      </ul>
-    </div>
-
-    <!-- OJT AWS -->
-    <div class="experience">
-      <b
-        data-en="OJT Trainee – FCJ AWS Cloud Program (Sep 2025 – Dec 2025)"
-        data-vi="Thực tập sinh OJT – Chương trình AWS Cloud FCJ (09/2025 – 12/2025)">
-        OJT Trainee – FCJ AWS Cloud Program (Sep 2025 – Dec 2025)
-      </b>
-      <ul>
-        <li
-          data-en="Trained on AWS Cloud fundamentals and deployment workflows"
-          data-vi="Được đào tạo về nền tảng AWS Cloud và quy trình triển khai">
-          Trained on AWS Cloud fundamentals and deployment workflows
-        </li>
-        <li
-          data-en="Hands-on exposure to cloud-native and DevOps-oriented practices"
-          data-vi="Thực hành các mô hình cloud-native và DevOps">
-          Hands-on exposure to cloud-native and DevOps-oriented practices
-        </li>
-        <li
-          data-en="Completed the program with high regard for performance"
-          data-vi="Hoàn thành chương trình với đánh giá cao về hiệu suất">
-          Completed program with <b>high regard</b> for performance
-        </li>
-        <li>
-          <span
-            data-en="Internship Report:"
-            data-vi="Báo cáo thực tập:">
-            Internship Report:
-          </span>
-          <a href="https://docvoxx.github.io/internship-report/" target="_blank">
-            [Report]
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!-- EDUCATION -->
-  <div class="section">
-    <div class="section-title"
-      data-en="Education"
-      data-vi="Học vấn">
-      Education
-    </div>
-    <div class="edu-box">
-      <b
-        data-en="Bachelor of Artificial Intelligence"
-        data-vi="Cử nhân Trí tuệ Nhân tạo">
-        Bachelor of Artificial Intelligence
-      </b><br>
-      FPT University<br>
-      <span
-        data-en="Expected Graduation: 2027"
-        data-vi="Dự kiến tốt nghiệp: 2027">
-        Expected Graduation: 2027
-      </span>
-    </div>
-  </div>
-<!-- CERTIFICATIONS -->
-  <div class="section">
-    <div class="section-title"
-      data-en="Certifications"
-      data-vi="Chứng chỉ">
-      Certifications
-    </div>
-    <ul class="cert-list">
-      <li>IELTS 7.5 – Academic English Proficiency</li>
-
-      <li>Academic Skills for University Success Specialization – IBM (Mar 2024)
-        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/CPG8DNDUQV7M" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Software Development Lifecycle – University of Minnesota (Feb 2025)
-        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/1T4Z1Q4AMSKXAI" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Developing Front-End Apps with React – IBM (May 2025)
-        <a href="https://www.coursera.org/account/accomplishments/records/BUO6WAMUMJEC" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Introduction to Web Development with HTML, CSS, JavaScript – IBM (May 2025)
-        <a href="https://www.coursera.org/account/accomplishments/records/4E20BX7P5N5S" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Introduction to Cloud Computing – IBM (May 2025)
-        <a href="https://www.coursera.org/account/accomplishments/records/RV39F6676GAJ" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Neural Networks and Deep Learning – DeepLearning.AI (May 2025)
-        <a href="https://www.coursera.org/account/accomplishments/records/MHVK1S4ON8T9" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Convolutional Neural Networks – DeepLearning.AI (Jun 2025)
-        <a href="https://www.coursera.org/account/accomplishments/records/T500IB01V125" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Generative AI: Elevate Your Software Development Career – IBM (Jun 2025)
-        <a href="https://www.coursera.org/account/accomplishments/records/QAR2JS6D0UEO" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Developing Back-End Apps with Node.js and Express – IBM (Jun 2025)
-        <a href="https://www.coursera.org/account/accomplishments/records/OZ63YW5T31YA" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Introduction to Containers with Docker, Kubernetes & OpenShift – IBM (Jun 2025)
-        <a href="https://www.coursera.org/account/accomplishments/records/L9ONKJCSPTLP" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Natural Language Processing Specialization – DeepLearning.AI (Sep 2025)
-        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/KM85VKZ1Z1U4" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Sequence Models – DeepLearning.AI (Jan 2026)
-        <a href="https://www.coursera.org/account/accomplishments/records/5N6V22WGIWFX" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Foundations for Everyone Specialization – IBM (Jan 2026)
-        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/ZIGGRQSBLMW4" target="_blank">[Certificate]</a>
-      </li>
-
-      <li>Python for Data Science, AI & Development – IBM (Jan 2026)
-        <a href="https://www.coursera.org/account/accomplishments/records/MDFFCB3F56PU" target="_blank">[Certificate]</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<script>
-  function switchLang(lang) {
-    document.querySelectorAll("[data-en]").forEach(el => {
-      el.innerText = el.dataset[lang];
-    });
-    document.getElementById("btn-en").classList.toggle("active", lang === "en");
-    document.getElementById("btn-vi").classList.toggle("active", lang === "vi");
-    localStorage.setItem("cv-lang", lang);
-  }
-
-  const savedLang = localStorage.getItem("cv-lang");
-  if (savedLang) switchLang(savedLang);
-</script>
-
+    const savedLang = localStorage.getItem("cv-lang");
+    if (savedLang) switchLang(savedLang);
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
