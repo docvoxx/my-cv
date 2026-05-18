@@ -1,8 +1,8 @@
 # Hi, I'm Lan Nguyen Duc 👋
 
-### AI Engineering student focused on data, machine learning, and practical AI systems
+### AI & Data Engineer in progress, focused on machine learning and practical AI systems
 
-I am a third-year Artificial Intelligence student at FPT University, focused on data analysis, machine learning, and practical AI applications. I enjoy turning messy data into useful decisions, and turning ML ideas into systems people can actually use.
+I am a third-year Artificial Intelligence student at FPT University, growing toward AI & Data Engineering through data analysis, machine learning, and practical AI applications. I enjoy turning messy data into useful decisions, and turning ML ideas into systems people can actually use.
 
 ## What I work with
 
