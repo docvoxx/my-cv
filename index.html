@@ -96,9 +96,25 @@
     }
 
     .contact li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
       margin-bottom: 10px;
       color: var(--muted);
       word-break: break-word;
+    }
+
+    .contact-icon {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 auto;
+      margin-top: 3px;
+      color: var(--accent);
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     a {
@@ -107,6 +123,13 @@
     }
 
     a:hover { color: var(--accent); }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
 
     .lang-switch {
       display: inline-flex;
@@ -221,6 +244,50 @@
 
     .plain-list li + li { margin-top: 8px; }
 
+    .tech-icons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .tech-icons img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      transition: transform 180ms ease;
+    }
+
+    .tech-icons img:hover { transform: translateY(-2px); }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 7px 11px;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .project-link:hover {
+      transform: translateY(-1px);
+      background: #dbeafe;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.13);
+    }
+
     .timeline {
       display: grid;
       gap: 16px;
@@ -256,6 +323,13 @@
       .grid { grid-template-columns: 1fr; }
       .certs { columns: 1; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -276,10 +350,22 @@
         </p>
 
         <ul class="contact">
-          <li>📧 <a href="mailto:lannguyen68609@gmail.com">lannguyen68609@gmail.com</a></li>
-          <li>📞 <a href="tel:+84903842341">+84 903 842 341</a></li>
-          <li>🔗 <a href="https://www.linkedin.com/in/lannd205" target="_blank">linkedin.com/in/lannd205</a></li>
-          <li>💻 <a href="https://github.com/docvoxx" target="_blank">github.com/docvoxx</a></li>
+          <li>
+            <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+            <a href="mailto:lannguyen68609@gmail.com">lannguyen68609@gmail.com</a>
+          </li>
+          <li>
+            <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.9z"></path></svg>
+            <a href="tel:+84903842341">+84 903 842 341</a>
+          </li>
+          <li>
+            <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 10v6m0-9v.01M12 16v-3.5a2.5 2.5 0 0 1 5 0V16m-5 0v-6"></path></svg>
+            <a href="https://www.linkedin.com/in/lannd205" target="_blank" rel="noopener noreferrer">linkedin.com/in/lannd205</a>
+          </li>
+          <li>
+            <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.37 6.8-1.62 6.8-7.5A5.85 5.85 0 0 0 19.25 3 5.5 5.5 0 0 0 19.1.24S17.9-.13 15 1.74a13.4 13.4 0 0 0-7 0C5.1-.13 3.9.24 3.9.24A5.5 5.5 0 0 0 3.75 3 5.85 5.85 0 0 0 2.2 7c0 5.87 3.5 7.12 6.8 7.5A4.8 4.8 0 0 0 8 18v4"></path><path d="M8 19c-3 .92-3-1.5-4.2-2"></path></svg>
+            <a href="https://github.com/docvoxx" target="_blank" rel="noopener noreferrer">github.com/docvoxx</a>
+          </li>
         </ul>
 
         <div class="lang-switch">
@@ -323,13 +409,27 @@
                  data-vi="Python, NumPy, Pandas, Matplotlib, scikit-learn, TensorFlow, PyTorch">
                  Python, NumPy, Pandas, Matplotlib, scikit-learn, TensorFlow, PyTorch
               </p>
+              <div class="tech-icons" aria-label="AI and data technologies">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" title="Pandas" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="scikit-learn" title="scikit-learn" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" title="TensorFlow" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" title="PyTorch" />
+              </div>
             </div>
             <div class="card">
               <h3 data-en="Software Engineering Foundations" data-vi="Nền tảng kỹ thuật phần mềm">Software Engineering Foundations</h3>
-              <p data-en="REST API concepts, deployment workflows, Docker fundamentals, Git-based collaboration"
-                 data-vi="Khái niệm REST API, quy trình triển khai, nền tảng Docker, cộng tác với Git">
-                 REST API concepts, deployment workflows, Docker fundamentals, Git-based collaboration
+              <p data-en="React, TypeScript, FastAPI, REST APIs, deployment workflows, Docker, Git-based collaboration"
+                 data-vi="React, TypeScript, FastAPI, REST API, quy trình triển khai, Docker và cộng tác với Git">
+                 React, TypeScript, FastAPI, REST APIs, deployment workflows, Docker, Git-based collaboration
               </p>
+              <div class="tech-icons" aria-label="Software engineering technologies">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" title="FastAPI" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git" />
+              </div>
             </div>
           </div>
         </section>
@@ -342,18 +442,39 @@
           </h3>
           <div class="grid">
             <article class="card">
-              <h3 data-en="Financial Forecasting Model" data-vi="Mô hình dự báo tài chính">Financial Forecasting Model</h3>
-              <p data-en="Built machine learning models on historical financial data to study trend prediction and model evaluation."
-                 data-vi="Xây dựng các mô hình học máy trên dữ liệu tài chính lịch sử để nghiên cứu dự báo xu hướng và đánh giá mô hình.">
-                 Built machine learning models on historical financial data to study trend prediction and model evaluation.
+              <h3 data-en="DARIIZ — 2Gether" data-vi="DARIIZ — 2Gether">DARIIZ — 2Gether</h3>
+              <div class="meta" data-en="Main Code Founder & Lead Developer" data-vi="Main Code Founder & Lập trình viên chính">Main Code Founder & Lead Developer</div>
+              <p data-en="Designed the app structure and built core features for an AI-assisted dating and social confidence platform, from product workflows to production delivery."
+                 data-vi="Thiết kế cấu trúc ứng dụng và xây dựng các chức năng cốt lõi cho nền tảng AI hỗ trợ hẹn hò và sự tự tin xã hội, từ luồng sản phẩm đến triển khai production.">
+                 Designed the app structure and built core features for an AI-assisted dating and social confidence platform, from product workflows to production delivery.
               </p>
+              <div class="tech-icons" aria-label="DARIIZ technologies">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="Supabase" title="Supabase" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" title="Google Cloud" />
+              </div>
+              <div class="project-links">
+                <a class="project-link" href="https://dariiz.vercel.app" target="_blank" rel="noopener noreferrer" data-en="Open live app ↗" data-vi="Mở ứng dụng ↗">Open live app ↗</a>
+              </div>
             </article>
             <article class="card">
-              <h3 data-en="Chatbot Recommendation System" data-vi="Hệ thống gợi ý chatbot">Chatbot Recommendation System</h3>
-              <p data-en="Developed an NLP-based chatbot prototype and explored API-based delivery for practical use."
-                 data-vi="Phát triển nguyên mẫu chatbot dựa trên NLP và tìm hiểu cách đưa vào sử dụng thông qua API.">
-                 Developed an NLP-based chatbot prototype and explored API-based delivery for practical use.
+              <h3 data-en="AeroTwin AI" data-vi="AeroTwin AI">AeroTwin AI</h3>
+              <div class="meta" data-en="Top 4 — Agentic AI Build Week 2026, Aviation Track" data-vi="Top 4 — Agentic AI Build Week 2026, bảng Hàng không">Top 4 — Agentic AI Build Week 2026, Aviation Track</div>
+              <p data-en="Built an agentic airport-operations platform combining computer vision, real-time events, Neo4j, and a local LLM for evidence-grounded operational decisions."
+                 data-vi="Xây dựng nền tảng vận hành sân bay agentic kết hợp computer vision, sự kiện thời gian thực, Neo4j và LLM cục bộ để hỗ trợ quyết định dựa trên bằng chứng.">
+                 Built an agentic airport-operations platform combining computer vision, real-time events, Neo4j, and a local LLM for evidence-grounded operational decisions.
               </p>
+              <div class="tech-icons" aria-label="AeroTwin AI technologies">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" title="FastAPI" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg" alt="Neo4j" title="Neo4j" />
+              </div>
+              <div class="project-links">
+                <a class="project-link" href="https://github.com/docvoxx/HackOnTeam-AeroTwinAI" target="_blank" rel="noopener noreferrer" data-en="View repository ↗" data-vi="Xem repository ↗">View repository ↗</a>
+                <a class="project-link" href="https://github.com/docvoxx/HackOnTeam-AeroTwinAI/blob/main/docs/assets/hackon-team-certificate-agentic-ai-build-week-2026.png" target="_blank" rel="noopener noreferrer" data-en="View certificate ↗" data-vi="Xem chứng nhận ↗">View certificate ↗</a>
+              </div>
             </article>
             <article class="card">
               <h3 data-en="Deepfake Detection" data-vi="Phát hiện deepfake">Deepfake Detection</h3>
@@ -379,6 +500,28 @@
             Experience
           </h3>
           <div class="timeline">
+            <article class="card">
+              <h3 data-en="Main Code Founder & Lead Developer — DARIIZ, 2Gether" data-vi="Main Code Founder & Lập trình viên chính — DARIIZ, 2Gether">Main Code Founder & Lead Developer — DARIIZ, 2Gether</h3>
+              <div class="meta">2026 – Present</div>
+              <ul class="plain-list">
+                <li data-en="Designed the application architecture and implemented its core product features."
+                    data-vi="Thiết kế kiến trúc ứng dụng và trực tiếp xây dựng các chức năng sản phẩm cốt lõi.">
+                    Designed the application architecture and implemented its core product features.
+                </li>
+                <li data-en="Built AI-assisted dating guidance, discovery, action-planning, and production workflows."
+                    data-vi="Xây dựng các luồng AI hỗ trợ tư vấn hẹn hò, khám phá địa điểm, lập kế hoạch hành động và vận hành production.">
+                    Built AI-assisted dating guidance, discovery, action-planning, and production workflows.
+                </li>
+                <li data-en="Led hands-on engineering across frontend, backend services, data, and deployment."
+                    data-vi="Phụ trách kỹ thuật trực tiếp trên frontend, dịch vụ backend, dữ liệu và triển khai.">
+                    Led hands-on engineering across frontend, backend services, data, and deployment.
+                </li>
+              </ul>
+              <div class="project-links">
+                <a class="project-link" href="https://dariiz.vercel.app" target="_blank" rel="noopener noreferrer" data-en="Visit DARIIZ ↗" data-vi="Truy cập DARIIZ ↗">Visit DARIIZ ↗</a>
+              </div>
+            </article>
+
             <article class="card">
               <h3 data-en="OJT Trainee — FCJ AWS Cloud Program" data-vi="Thực tập sinh OJT — Chương trình AWS Cloud FCJ">OJT Trainee — FCJ AWS Cloud Program</h3>
               <div class="meta">Sep 2025 – Dec 2025</div>
@@ -417,20 +560,6 @@
               </ul>
             </article>
 
-            <article class="card">
-              <h3 data-en="English Tutor" data-vi="Gia sư tiếng Anh">English Tutor</h3>
-              <div class="meta">2023</div>
-              <ul class="plain-list">
-                <li data-en="Taught foundational English and IELTS preparation."
-                    data-vi="Giảng dạy tiếng Anh nền tảng và luyện thi IELTS.">
-                    Taught foundational English and IELTS preparation.
-                </li>
-                <li data-en="Strengthened communication, explanation, and presentation skills."
-                    data-vi="Rèn luyện kỹ năng giao tiếp, diễn giải và thuyết trình.">
-                    Strengthened communication, explanation, and presentation skills.
-                </li>
-              </ul>
-            </article>
           </div>
         </section>
 
@@ -454,6 +583,7 @@
             Selected certifications
           </h3>
           <ul class="certs">
+            <li><a href="https://github.com/docvoxx/HackOnTeam-AeroTwinAI/blob/main/docs/assets/hackon-team-certificate-agentic-ai-build-week-2026.png" target="_blank" rel="noopener noreferrer" data-en="Top 4, Aviation Track — Agentic AI Build Week 2026 ↗" data-vi="Top 4, bảng Hàng không — Agentic AI Build Week 2026 ↗">Top 4, Aviation Track — Agentic AI Build Week 2026 ↗</a></li>
             <li>IELTS 7.5</li>
             <li>Natural Language Processing Specialization — DeepLearning.AI</li>
             <li>Sequence Models — DeepLearning.AI</li>

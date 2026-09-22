@@ -4,6 +4,8 @@
 
 I am a third-year Artificial Intelligence student at FPT University, growing toward AI & Data Engineering through data analysis, machine learning, and practical AI applications. I enjoy turning messy data into useful decisions, and turning ML ideas into systems people can actually use.
 
+I am also the Main Code Founder and Lead Developer of [DARIIZ](https://dariiz.vercel.app), a startup product by team 2Gether, and a Top 4 finisher in the Aviation Track at Agentic AI Build Week 2026 with [AeroTwin AI](https://github.com/docvoxx/HackOnTeam-AeroTwinAI).
+
 ## What I work with
 
 **AI & Data**  
@@ -29,7 +31,20 @@ Developed an NLP-based chatbot prototype and explored API-based delivery for pra
 ### Deepfake Detection & Audio Emotion Recognition
 Designed deep learning pipelines using CNN- and RNN-based approaches for media understanding tasks.
 
+### [DARIIZ — 2Gether](https://dariiz.vercel.app)
+Main Code Founder and Lead Developer responsible for the application structure, core product features, AI-assisted experiences, and production delivery.
+
+### [AeroTwin AI](https://github.com/docvoxx/HackOnTeam-AeroTwinAI)
+Built an agentic airport-operations platform combining computer vision, real-time events, Neo4j, and a local LLM. The team achieved Top 4 in the Aviation Track at Agentic AI Build Week 2026. [View certificate](https://github.com/docvoxx/HackOnTeam-AeroTwinAI/blob/main/docs/assets/hackon-team-certificate-agentic-ai-build-week-2026.png).
+
 ## Experience
+
+### Main Code Founder & Lead Developer — DARIIZ, 2Gether
+**2026 – Present**
+- Designed the application architecture and implemented core product features
+- Built AI-assisted dating guidance, discovery, action-planning, and production workflows
+- Led hands-on engineering across frontend, backend services, data, and deployment
+- [Open the live DARIIZ app](https://dariiz.vercel.app)
 
 ### OJT Trainee — FCJ AWS Cloud Program
 **Sep 2025 – Dec 2025**
@@ -44,11 +59,6 @@ Designed deep learning pipelines using CNN- and RNN-based approaches for media u
 - Practiced collaborative development workflows
 - Built core software engineering fundamentals alongside AI studies
 
-### English Tutor
-**2023**
-- Taught foundational English and IELTS preparation
-- Strengthened communication, explanation, and presentation skills
-
 ## Education
 
 **Bachelor of Artificial Intelligence** — FPT University  
@@ -56,6 +66,7 @@ Expected graduation: 2027
 
 ## Selected certifications
 
+- [Top 4, Aviation Track — Agentic AI Build Week 2026 (Certificate of Achievement)](https://github.com/docvoxx/HackOnTeam-AeroTwinAI/blob/main/docs/assets/hackon-team-certificate-agentic-ai-build-week-2026.png)
 - IELTS 7.5
 - Natural Language Processing Specialization — DeepLearning.AI
 - Sequence Models — DeepLearning.AI
