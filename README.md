@@ -32,7 +32,7 @@ Developed an NLP-based chatbot prototype and explored API-based delivery for pra
 Designed deep learning pipelines using CNN- and RNN-based approaches for media understanding tasks.
 
 ### [DARIIZ — 2Gether](https://dariiz.vercel.app)
-Main Code Founder and Lead Developer responsible for the application structure, core product features, AI-assisted experiences, and production delivery.
+Main Code Founder and Lead Developer responsible for the application structure, core product features, AI-assisted experiences, and production delivery. DARIIZ was selected among the Top 15 Outstanding Projects at Big Idea 2026 — Venturists: Beyond The Horizon. [View repository and certificate](https://github.com/docvoxx/DARIIZ_2Gether).
 
 ### [AeroTwin AI](https://github.com/docvoxx/HackOnTeam-AeroTwinAI)
 Built an agentic airport-operations platform combining computer vision, real-time events, Neo4j, and a local LLM. The team achieved Top 4 in the Aviation Track at Agentic AI Build Week 2026. [View certificate](https://github.com/docvoxx/HackOnTeam-AeroTwinAI/blob/main/docs/assets/hackon-team-certificate-agentic-ai-build-week-2026.png).
@@ -44,6 +44,7 @@ Built an agentic airport-operations platform combining computer vision, real-tim
 - Designed the application architecture and implemented core product features
 - Built AI-assisted dating guidance, discovery, action-planning, and production workflows
 - Led hands-on engineering across frontend, backend services, data, and deployment
+- DARIIZ was selected among the Top 15 Outstanding Projects at Big Idea 2026 — Venturists: Beyond The Horizon
 - [Open the live DARIIZ app](https://dariiz.vercel.app)
 
 ### OJT Trainee — FCJ AWS Cloud Program
@@ -66,6 +67,7 @@ Expected graduation: 2027
 
 ## Selected certifications
 
+- [Top 15 Outstanding Projects — Big Idea 2026: Venturists: Beyond The Horizon (DARIIZ Certificate)](https://github.com/docvoxx/DARIIZ_2Gether/blob/main/docs/assets/dariiz-top-15-big-idea-2026-certificate.png)
 - [Top 4, Aviation Track — Agentic AI Build Week 2026 (Certificate of Achievement)](https://github.com/docvoxx/HackOnTeam-AeroTwinAI/blob/main/docs/assets/hackon-team-certificate-agentic-ai-build-week-2026.png)
 - IELTS 7.5
 - Natural Language Processing Specialization — DeepLearning.AI
